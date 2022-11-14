@@ -1,8 +1,8 @@
 function CallTeam() {
   //
   const container = document.getElementById("team");
-  const rbutt = document.getElementById("rButton");
-  const lbutt = document.getElementById("lButton");
+  const rbutt = document.getElementById("right_arrow");
+  const lbutt = document.getElementById("left_arrow");
 
   // -----------------------------------
   // WHAT YOU HAVE TO DO TO MAKE IT WORK
