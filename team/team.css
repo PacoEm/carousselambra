@@ -1,0 +1,43 @@
+/* xxxxxxxxxxxxxxxxxxxxxx */
+/* -------- TEAM -------- */
+/* xxxxxxxxxxxxxxxxxxxxxx */
+
+/* You'll just have to: */
+/* 1 - in this css file, write the number of images line 33 */
+/* 2 - in js file, fill the array 'imgs' whith the image's path */
+
+/* team container */
+
+#team{
+
+    /* you can change the dimensions */
+    /* ----------------------------- */
+    width: 50%;
+    /* ----------------------------- */
+    
+    display: flex;
+    justify-content: space-between;
+
+    /* border: solid 1px rgba(0, 0, 0, 0.675);
+    box-shadow: 5px 5px 10px  rgba(0, 0, 0, 0.518); */
+}
+
+/* team */
+
+.divlook{
+    aspect-ratio: 1/1;
+    border-radius: 50%;
+    box-sizing: border-box;
+    transform-origin: center;
+    transition: 0.1s ease;
+    border: solid rgba(255, 255, 255, 0.79) 2px;
+
+}
+#buttons{
+    display: flex;
+}
+
+#rButton, #lButton{
+    margin: 30px;
+    color: silver;
+}

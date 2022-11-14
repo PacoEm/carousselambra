@@ -6,56 +6,55 @@
 /* 1 - in this js file, fill the array 'imgs' whith image's path */
 /* 2 - in css file, write the number of images line 33 */
 
-const caroussel = document.getElementById("workbook");
+function callWorkbook() {
+  const workbook = document.getElementById("workbook");
 
-// put in 'imgs' the images with the complete path
-const imgs = [
-  "url(workbook/imgs/img0.jpg)",
-  "url(workbook/imgs/img1.jpg)",
-  "url(workbook/imgs/img2.jpg)",
-  "url(workbook/imgs/img3.jpg)",
-  "url(workbook/imgs/img4.jpg)",
-  "url(workbook/imgs/img5.jpg)",
-];
+  // put in 'imgs' the images with the complete path
+  const imgs = [
+    "url(workbook/imgs/img0.jpg)",
+    "url(workbook/imgs/img1.jpg)",
+    "url(workbook/imgs/img2.jpg)",
+    "url(workbook/imgs/img3.jpg)",
+    "url(workbook/imgs/img4.jpg)",
+    "url(workbook/imgs/img5.jpg)",
+  ];
 
-// added at the end of innerHTML div
-const imgStyle = " center/cover no-repeat";
+  // added at the end of innerHTML div
+  const imgStyle = " center/cover no-repeat";
 
-// getting the caroussel's width
-let cWidth = caroussel.offsetWidth;
+  // creation of a id for new innerHtml divs
+  let i = 0;
 
-// creation of a id for new innerHtml divs
-let i = 0;
+  // inialisation of a array containing all id created
+  let idArray = [];
 
-// inialisation of a array containing all id created
-let idArray = [];
+  // inialisation of a array containing all div created
+  let divArray = [];
 
-// inialisation of a array containing all div created
-let divArray = [];
+  window.addEventListener("load", () => {
+    for (let j = 0; j < imgs.length; j += 1) {
+      // creation of an id number
+      toString(i);
+      idCont = "workbook_div" + i;
 
-console.log(imgs.length);
+      // send of the new id to idArray
+      idArray.push(idCont);
 
-window.addEventListener("load", () => {
-  for (let j = 0; j < imgs.length; j += 1) {
-    // creation of an id number
-    toString(i);
-    idCont = "div" + i;
+      // creation of a new div
+      workbook.innerHTML += "<div id='" + idArray[i] + "'></div>";
 
-    // send of the new id to idArray
-    idArray.push(idCont);
+      // getting the new div in a var
+      let newDiv = document.getElementById(idArray[i]);
 
-    // creation of a new div
-    caroussel.innerHTML += "<div id='" + idArray[i] + "'></div>";
+      // push the new div in divArray
+      divArray.push(newDiv);
 
-    // getting the new div in a var
-    let newDiv = document.getElementById(idArray[i]);
+      // adding of the background image
+      newDiv.style.background = imgs[i] + imgStyle;
 
-    // push the new div in divArray
-    divArray.push(newDiv);
+      i += 1;
+    }
+  });
+}
 
-    // adding of the background image
-    newDiv.style.background = imgs[i] + imgStyle;
-
-    i += 1;
-  }
-});
+callWorkbook();
