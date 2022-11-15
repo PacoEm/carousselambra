@@ -8,6 +8,11 @@
 
 /* team container */
 
+@font-face {
+    font-family: text;
+    src: url(fonts/Montserrat/static/Montserrat-Light.ttf);
+}
+
 #team{
 
     /* you can change the dimensions */
@@ -42,5 +47,26 @@
 }
 #left_arrow{
     background: url(./imgs/left.png) center/contain no-repeat;
+}
+
+#texts{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 44vw;
+    margin-top: 5%;
+}
+#text1, #text2, #dash{
+    /* font-weight: bold; */
+    font-family: text, sans-serif;
+    color: rgb(247, 247, 226);
+    text-align: center;
+    font-size: calc(0.2rem + 1vw);
+}
+#text2{
+    color: rgb(172, 172, 165);
+}
+#dash{
+    margin: 0px 8px;
 }
 

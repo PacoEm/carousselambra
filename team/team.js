@@ -3,6 +3,8 @@ function CallTeam() {
   const container = document.getElementById("team");
   const rbutt = document.getElementById("right_arrow");
   const lbutt = document.getElementById("left_arrow");
+  const person = document.getElementById("text1");
+  const job = document.getElementById("text2");
 
   // -----------------------------------
   // WHAT YOU HAVE TO DO TO MAKE IT WORK
@@ -15,6 +17,18 @@ function CallTeam() {
     "url(team/imgs/img2.jpg)",
     "url(team/imgs/img3.jpg)",
     "url(team/imgs/img4.jpg)",
+  ];
+
+  // person's name
+  const names = ["Vera", "Fabian", "Christine", "Paul", "Roger"];
+
+  // person's function
+  const jobs = [
+    "second manager",
+    "fisrt manager",
+    "director",
+    "seller",
+    "employee",
   ];
 
   // select the size of each div containig images
@@ -49,6 +63,8 @@ function CallTeam() {
   // the middle div is selected first
   document.getElementById(ids[idNbr]).style.transform = "scale(" + SCALE + ")";
   document.getElementById(ids[idNbr]).style.border = "solid white 2px";
+  text1.innerText = names[idNbr];
+  text2.innerText = jobs[idNbr];
 
   // ========================
   // -------- EVENTS --------
@@ -60,11 +76,14 @@ function CallTeam() {
     if (idNbr === imgs.length) {
       idNbr -= 1;
     }
-    // selected image
+    // size of selected image
     document.getElementById(ids[idNbr]).style.transform =
       "scale(" + SCALE + ")";
-    // previous image
+    // size of previous image
     document.getElementById(ids[idNbr - 1]).style.transform = "scale(100%)";
+    // text's display
+    text1.innerText = names[idNbr];
+    text2.innerText = jobs[idNbr];
   });
 
   // left button
@@ -78,6 +97,9 @@ function CallTeam() {
       "scale(" + SCALE + ")";
     // previous image
     document.getElementById(ids[idNbr + 1]).style.transform = "scale(100%)";
+    // text's display
+    text1.innerText = names[idNbr];
+    text2.innerText = jobs[idNbr];
   });
 }
 
