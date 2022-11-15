@@ -30,14 +30,29 @@ h2{
     color: rgb(202, 202, 180);
 }
 h3{
-    margin-top: 50px;
-    margin-bottom: 30px;
+    margin-top: 4%;
+    margin-bottom: 4%;
     font-family: 'h3', sans-serif;
     font-size: calc(0.5rem + 1.2vw);
     color: beige;
+}
+section{
+    margin-bottom: 6%;
 }
 .caroucontain{
     display: flex;
     flex-direction: column;
     align-items: center;
+}
+
+#titreTeam{
+    margin-bottom: 3%;
+}
+
+.separation{
+    width: 50vw;
+    height: 1px;
+    background-color: rgba(245, 245, 220, 0.374);
+    margin-top: 50px;
+    margin: auto;
 }
