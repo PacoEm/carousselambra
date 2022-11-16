@@ -36,6 +36,8 @@
     transform-origin: center;
     transition: 0.1s ease;
     border: solid rgba(255, 255, 255, 0.79) 2px;
+    box-shadow: 5px 5px 10px  rgba(0, 0, 0, 0.518);
+
 
 }
 #right_arrow, #left_arrow{
