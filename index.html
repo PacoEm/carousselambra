@@ -6,8 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="style.css">
+    <!-- caroussels -->
     <link rel="stylesheet" href="./workbook/workbook.css">
     <link rel="stylesheet" href="./team/team.css">
+    <link rel="stylesheet" href="./classic/classic.css">
 </head>
 <body>
 
@@ -21,6 +23,9 @@
             <li>
                 <a href="#linkTeam">team</a>
             </li>
+            <li>
+                <a href="#linkClassic">classic</a>
+            </li>
         </ul>
     </nav>
 
@@ -33,7 +38,23 @@
         </h2>
     </header>
 
-
+    <!-- classic -->
+    <section id="linkClassic">
+        <div class="caroucontain">
+            
+            <h3 id="titreClassic">Classic</h3>
+            <div id="classic">
+                <div id="textClassic">
+                    <div id="linearGradient">
+                        <p>
+                            My Family Cooking
+                        </p>
+    
+                    </div>
+                </div>
+            </div>
+    </section>
+    
     <!-- workbook -->
     <section id="linkWorkbook">
         <div class="caroucontain">
@@ -47,7 +68,7 @@
     <!-- team -->
     <section id="linkTeam">
         <div class="caroucontain">
-            <h3 id="titreTeam">team</h3>
+            <h3 id="titreTeam">Team</h3>
             <br>
             <div id="team">
                 <div id="left_arrow"></div>
@@ -67,11 +88,15 @@
             </div>
     </section>
 
+    <div class="separation"></div>
+
+
 
 
 
     <!-- scripts -->
     <script src="./workbook/workbook.js"></script>
     <script src="./team/team.js"></script>
+    <script src="./classic/classic.js"></script>
 </body>
 </html>

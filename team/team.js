@@ -25,7 +25,7 @@ function CallTeam() {
   // person's function
   const jobs = [
     "second manager",
-    "fisrt manager",
+    "first manager",
     "director",
     "seller",
     "employee",
