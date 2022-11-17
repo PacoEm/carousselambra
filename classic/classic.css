@@ -25,15 +25,15 @@
 
     border: solid 1px rgba(0, 0, 0, 0.675);
     box-shadow: 5px 5px 10px  rgba(0, 0, 0, 0.518);
-
-    transition: 1.5s ease;
-
 }
 #linearGradient{
     width: 50vw;
     height: 100%;
     z-index: 1;
     background: linear-gradient(160deg, rgba(0, 0, 0, 0.625), rgba(255, 255, 255, 0));
+}
+#textClassic{
+    transition: 1.3s ease;
 }
 #classic p{
     font-family: title, sans-serif;
@@ -42,9 +42,4 @@
     padding-top: calc(0.4px + 1vw);
     padding-left: calc(18px + 1vw);
     text-shadow: 2px 2px 2px black;
-}
-
-#button{
-    margin-top: 10px;
-    color: beige;
 }

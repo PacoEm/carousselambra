@@ -1,5 +1,5 @@
 function CallClassic() {
-  const container = document.getElementById("classic");
+  const container = document.getElementById("textClassic");
 
   // -----------------------------------
   // WHAT YOU HAVE TO DO TO MAKE IT WORK
