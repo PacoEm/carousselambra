@@ -1,11 +1,5 @@
 function CallClassic() {
-  const container = document.getElementById("textClassic");
-
-  // -----------------------------------
-  // WHAT YOU HAVE TO DO TO MAKE IT WORK
-  // -----------------------------------
-
-  // copy all your images url here
+  // the backgrounds of each div
   const imgs = [
     "url(classic/imgs/img0.jpg)",
     "url(classic/imgs/img1.jpg)",
@@ -14,29 +8,34 @@ function CallClassic() {
     "url(classic/imgs/img4.jpg)",
   ];
 
-  // select the time delay for the bg transition
-  const SECONDS = 5;
+  // the display's duration for setInterval
+  const SPEED = 2;
 
-  // ------------------------
-  // JAVASCRIPT DO THE REST !
-  // ------------------------
-
-  let i = 0;
-
-  // the first background to be displayed
-  container.style.background = imgs[i] + "center/cover no-repeat";
-
-  // change the background image each n seconds
-  setInterval(ChangeBg, SECONDS + "000");
-
-  // change the background image
-  function ChangeBg() {
-    i += 1;
-    if (i === imgs.length) {
-      i = 0;
-    }
-    container.style.background = imgs[i] + "center/cover no-repeat";
+  // allocation of background to divs
+  for (let i = 0; i < imgs.length; i += 1) {
+    // allocation of backgrounds to divs
+    document.getElementById("c" + i).style.background =
+      imgs[i] + "center/cover no-repeat";
   }
+
+  // initialisation of an array containing the z-index value
+  // at the end, idx will contain [0,0,0,0,1]
+  let idx = [];
+  for (let i = imgs.length - 2; i >= 0; i -= 1) {
+    idx.push(0);
+  }
+  idx.push(1);
+
+  function ChangeIndex() {
+    idx.push(idx[0]);
+    idx.shift();
+    for (let i = 0; i < imgs.length; i += 1) {
+      document.getElementById("c" + i).style.zIndex = idx[i];
+    }
+
+    // the '1' value in 'idx' array moves one by one
+  }
+  setInterval(ChangeIndex, SPEED + "000");
 }
 
 CallClassic();
