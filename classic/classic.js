@@ -9,7 +9,8 @@ function CallClassic() {
   ];
 
   // the display's duration for setInterval
-  const SPEED = 2;
+  const DURATION = 5;
+  const TRANSITION = 2;
 
   // allocation of background to divs
   for (let i = 0; i < imgs.length; i += 1) {
@@ -26,16 +27,35 @@ function CallClassic() {
   }
   idx.push(1);
 
+  let opc = [0, 0, 0, 1, 0];
+
+  // initialisation of an array containing transition's style
+  // at the end, idx will contain ["none", "none", "none", "none", "0.2s ease"]
+  let stl = [];
+  for (let i = imgs.length - 2; i >= 0; i -= 1) {
+    stl.push("none");
+  }
+  stl.push(TRANSITION + "s ease");
+
+  document.getElementById("c4").style.opacity = "0";
+  document.getElementById("c4").style.transition = "none";
+  document.getElementById("c4").style.transformProperty = "opacity";
+
   function ChangeIndex() {
     idx.push(idx[0]);
     idx.shift();
+    stl.push(stl[0]);
+    stl.shift();
+    opc.push(opc[0]);
+    opc.shift();
     for (let i = 0; i < imgs.length; i += 1) {
       document.getElementById("c" + i).style.zIndex = idx[i];
+      document.getElementById("c" + i).style.opacity = opc[i];
+      document.getElementById("c" + i).style.transition = stl[i];
+      document.getElementById("c" + i).style.transitionProperty = "opacity";
     }
-
-    // the '1' value in 'idx' array moves one by one
   }
-  setInterval(ChangeIndex, SPEED + "000");
+  setInterval(ChangeIndex, DURATION + "000");
 }
 
 CallClassic();
