@@ -49,6 +49,7 @@ h3{
 #navbar{
     display: flex;
     align-items: flex-end;
+    position: fixed;
 
     margin-top: -500px;
     width: 9%;
