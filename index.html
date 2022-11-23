@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="style.css">
+
     <!-- caroussels -->
     <link rel="stylesheet" href="./workbook/workbook.css">
     <link rel="stylesheet" href="./team/team.css">
@@ -19,16 +20,16 @@
         2 - type the title superposed on the divs -->
     <!-- -------------------------------------------------- -->
         
-    <nav>
-        <ul>
+    <nav id="navbar">
+        <ul id="navitems">
+            <li>
+                <a href="#linkClassic">classic</a>
+            </li>
             <li>
                 <a href="#linkWorkbook">workbook</a>
             </li>
             <li>
                 <a href="#linkTeam">team</a>
-            </li>
-            <li>
-                <a href="#linkClassic">classic</a>
             </li>
         </ul>
     </nav>
@@ -42,7 +43,7 @@
         </h2>
     </header>
 
-    <div class="separation"></div>
+    <!-- <div class="separation"></div> -->
 
     <!-- classic -->
     <section id="linkClassic">
@@ -66,9 +67,7 @@
 
                     <div id="linearGradient"></div>
             </div>
-
     </section>
-
 
     <!-- workbook -->
     <section id="linkWorkbook">
@@ -103,13 +102,9 @@
             </div>
     </section>
 
-    
-
-
-
-
 
     <!-- scripts -->
+    <script src="navbar.js"></script>
     <script src="./workbook/workbook.js"></script>
     <script src="./team/team.js"></script>
     <script src="./classic/classic.js"></script>
