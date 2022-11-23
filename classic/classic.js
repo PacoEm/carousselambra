@@ -22,8 +22,6 @@ function CallClassic() {
   // JAVASCRIPT DO THE REST !
   // ------------------------
 
-  const title = document.getElementById("title");
-
   // allocation of background to divs
   for (let i = 0; i < imgs.length; i += 1) {
     // allocation of backgrounds to divs
@@ -46,8 +44,6 @@ function CallClassic() {
     opc.push(0);
   }
   opc[imgs.length - 2] = 1;
-
-  // let opc = [0, 0, 0, 1, 0];
 
   // initialisation of an array containing transition's style
   // at the end, idx will contain ["none", "none", "none", "none", "0.2s ease"]
@@ -74,7 +70,6 @@ function CallClassic() {
       document.getElementById("c" + i).style.opacity = opc[i];
       document.getElementById("c" + i).style.transition = stl[i];
       document.getElementById("c" + i).style.transitionProperty = "opacity";
-      title.style.zIndex = "10";
     }
   }
   setInterval(StyleTransitions, DURATION + "000");
