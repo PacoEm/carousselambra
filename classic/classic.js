@@ -1,16 +1,28 @@
 function CallClassic() {
-  // the backgrounds of each div
+  // -----------------------------------
+  // WHAT YOU HAVE TO DO TO MAKE IT WORK
+  // -----------------------------------
+
+  // the backgrounds of each div with the right path
   const imgs = [
-    "url(classic/imgs/img0.jpg)",
-    "url(classic/imgs/img1.jpg)",
-    "url(classic/imgs/img2.jpg)",
     "url(classic/imgs/img3.jpg)",
+    "url(classic/imgs/img2.jpg)",
+    "url(classic/imgs/img1.jpg)",
+    "url(classic/imgs/img0.jpg)",
     "url(classic/imgs/img4.jpg)",
   ];
 
-  // the display's duration for setInterval
+  // the display's duration for each image
   const DURATION = 5;
+
+  // the transition's duration
   const TRANSITION = 2;
+
+  // ------------------------
+  // JAVASCRIPT DO THE REST !
+  // ------------------------
+
+  const title = document.getElementById("title");
 
   // allocation of background to divs
   for (let i = 0; i < imgs.length; i += 1) {
@@ -20,14 +32,22 @@ function CallClassic() {
   }
 
   // initialisation of an array containing the z-index value
-  // at the end, idx will contain [0,0,0,0,1]
+  // at the end, idx will contain [n0, 1]
   let idx = [];
   for (let i = imgs.length - 2; i >= 0; i -= 1) {
     idx.push(0);
   }
   idx.push(1);
 
-  let opc = [0, 0, 0, 1, 0];
+  // initialisation of an array containing the opacity value
+  // at the end, idx will contain [n0, 1, 0]
+  let opc = [];
+  for (let i = 0; i < imgs.length; i += 1) {
+    opc.push(0);
+  }
+  opc[imgs.length - 2] = 1;
+
+  // let opc = [0, 0, 0, 1, 0];
 
   // initialisation of an array containing transition's style
   // at the end, idx will contain ["none", "none", "none", "none", "0.2s ease"]
@@ -41,7 +61,8 @@ function CallClassic() {
   document.getElementById("c4").style.transition = "none";
   document.getElementById("c4").style.transformProperty = "opacity";
 
-  function ChangeIndex() {
+  // StyleTransitions manage z-index, opacity and the transition
+  function StyleTransitions() {
     idx.push(idx[0]);
     idx.shift();
     stl.push(stl[0]);
@@ -53,9 +74,10 @@ function CallClassic() {
       document.getElementById("c" + i).style.opacity = opc[i];
       document.getElementById("c" + i).style.transition = stl[i];
       document.getElementById("c" + i).style.transitionProperty = "opacity";
+      title.style.zIndex = "10";
     }
   }
-  setInterval(ChangeIndex, DURATION + "000");
+  setInterval(StyleTransitions, DURATION + "000");
 }
 
 CallClassic();

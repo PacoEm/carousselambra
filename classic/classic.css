@@ -1,12 +1,8 @@
-/* xxxxxxxxxxxxxxxxxxxxxx */
-/* ------ WORKBOOK ------ */
-/* xxxxxxxxxxxxxxxxxxxxxx */
+/* xxxxxxxxxxxxxxxxxxxxx */
+/* ------ CLASSIC ------ */
+/* xxxxxxxxxxxxxxxxxxxxx */
 
-/* You'll just have to: */
-/* 1 - in this css file, write the number of images line 33 */
-/* 2 - in js file, fill the array 'imgs' whith the image's path */
-
-/* WORKBOOK container */
+/* CLASSIC container */
 @font-face {
     font-family: title;
     src: url(./fonts/Dancing_Script/static/DancingScript-Regular.ttf);
@@ -30,21 +26,16 @@
     position: absolute;
     width: 50vw;
     height: calc(70vw / 3);
-    transition-property: transform;
 
-}
-#essai{
-    width: 50vw;
-    height: calc(70vw / 3);
- 
-    overflow: hidden;
 }
 
 
 
 /* ----------------------------------- */
 /* things to keep */
-/* #classic p{
+#title{
+    position: absolute;
+    opacity: 1;
     font-family: title, sans-serif;
     font-size: 4vw;
     color: rgb(255, 255, 255);
@@ -57,4 +48,4 @@
     height: 100%;
     z-index: 1;
     background: linear-gradient(160deg, rgba(0, 0, 0, 0.625), rgba(255, 255, 255, 0));
-} */
+}
